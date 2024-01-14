@@ -1,4 +1,5 @@
 require('dotenv').config()
+const bodyParser = require('body-parser');
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -10,6 +11,13 @@ const cors = require('cors')
 const corsOptions= require('./config/corsOptions')
 const connectDB = require('./config/dbConn')
 const mongoose = require('mongoose')
+const studentsRoute = require('./routes/api/students')
+const authRoute = require('./routes/api/auth');
+const refreshRoutes = require('./routes/api/refresh');
+  const userRoutes = require('./routes/api/userRoutes')
+
+
+
 const PORT= process.env.PORT || 3500
 
 console.log(process.env.NODE_ENV)
@@ -19,6 +27,18 @@ app.use(logger)
 app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
+
+
+//Routes
+app.use('/api/v1/auth', authRoute);
+
+app.use('/api/v1/refresh', refreshRoutes);
+
+
+app.use('/api/v1/dash/students', studentsRoute);
+
+   app.use('/users', userRoutes); // Use only for Developement phase
+
 
 app.use('/', express.static(path.join(__dirname, 'public')))
 
@@ -40,7 +60,7 @@ app.use(errorHandler)
 // app.listen(PORT, ()=>console.log(`SERVER RUNNING ON PORT ${PORT}`))
 
 mongoose.connection.once('open', () => {
-    console.log('Connected to MongoDB')
+    // console.log('Connected to MongoDB')
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
 })
 
