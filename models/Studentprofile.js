@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
 const studentProfileSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    id: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     name: { type: String, required: true },
     phone_number: { type: String, required: true },
+    email:{type:String,required:true},
     dob: { type: Date, required: true },
     batch_name: {
       type: String,

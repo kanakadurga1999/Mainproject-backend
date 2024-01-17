@@ -35,7 +35,7 @@ app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/refresh', refreshRoutes);
 
 
-app.use('/api/v1/dash/students', studentsRoute);
+app.use('/api/v1/dash/studentprofiles', studentsRoute);
 
    app.use('/users', userRoutes); // Use only for Developement phase
 

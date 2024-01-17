@@ -21,8 +21,10 @@ const createNewStudent = async (req, res) => {
     }
     try {
         const result = await Student.create({
-            name: req.body.name,
+            id:req.body.id,
+             name: req.body.name,
             phone_number: req.body.phone_number,
+            email:req.body.email,
             dob: req.body.dob,
             batch_name: req.body.batch_name,
             gender: req.body.gender
