@@ -1,3 +1,4 @@
+const { response } = require('express');
 const Student = require('../models/Studentprofile');
 
 
@@ -19,6 +20,7 @@ const createNewStudent = async (req, res) => {
     if(!req?.body?.name){
         return res.status(400).json({'message': 'name is required'});
     }
+    console.log(req.body)
     try {
         const result = await Student.create({
             id:req.body.id,
@@ -26,8 +28,8 @@ const createNewStudent = async (req, res) => {
             phone_number: req.body.phone_number,
             email:req.body.email,
             dob: req.body.dob,
-            batch_name: req.body.batch_name,
-            gender: req.body.gender
+             batch_name: req.body.batch_name,
+             gender: req.body.gender
 
         });
         res.status(200).json({'message': 'Student profile created successfully'})

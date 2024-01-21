@@ -15,6 +15,7 @@ const studentsRoute = require('./routes/api/students')
 const authRoute = require('./routes/api/auth');
 const refreshRoutes = require('./routes/api/refresh');
   const userRoutes = require('./routes/api/userRoutes')
+  const batchRoute = require('./routes/api/batchs')
 
 
 
@@ -36,6 +37,7 @@ app.use('/api/v1/refresh', refreshRoutes);
 
 
 app.use('/api/v1/dash/studentprofiles', studentsRoute);
+app.use('/api/v1/dash',batchRoute)
 
    app.use('/users', userRoutes); // Use only for Developement phase
 

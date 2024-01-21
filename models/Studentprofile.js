@@ -1,17 +1,13 @@
 const mongoose = require('mongoose');
 
 const studentProfileSchema = new mongoose.Schema({
-    id: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    id: { type: mongoose.Schema.Types.ObjectId },
     name: { type: String, required: true },
-    phone_number: { type: String, required: true },
+    phone_number: { type: Number, required: true },
     email:{type:String,required:true},
-    dob: { type: Date, required: true },
-    batch_name: {
-      type: String,
-      enum: ['KKEM_March_CSA', 'KKEM_March_DSA', 'KKEM_March_MLAI', 'KKEM_March_FSD', 'KKEM_March_ST'],
-      required: true,
-    },
-    gender: { type: String, required: true },
+    dob: { type: String, required: true },
+    batch_name:{type:String},
+    gender: { type: String },
     exit_test_confirmation: { type: Boolean, default: false },
   });
 

@@ -8,7 +8,11 @@ const verifyJWT = require('../../middleware/verifyJWT');
 
 router.route('/')
     .get(studentsController.getAllStudents)
-    .post(verifyJWT, studentsController.createNewStudent)
+
+
+    
+router.route('/create')   
+    .post( studentsController.createNewStudent)
     
 
 router.route('/update/:id')
