@@ -29,6 +29,11 @@ app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
 
+app.use(cors({
+    origin: ['http://localhost:3000','https://vast-tan-chameleon-tux.cyclic.app'],
+    methods: ['GET','POST','PUT','DELETE'],
+    credentials: true
+}))
 
 //Routes
 app.use('/api/v1/auth', authRoute);
