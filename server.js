@@ -42,7 +42,13 @@ app.use('/api/v1/dash',batchRoute)
    app.use('/users', userRoutes); // Use only for Developement phase
 
 
-app.use('/', express.static(path.join(__dirname, 'public')))
+app.use('/', express.static(path.join(__dirname, './build')));
+app.get('*', function (_, res){
+    res.sendFile(path.join(__dirname, './build/index.html'), function(error){
+        res.status(500).send(error);
+    })
+})
+
 
 app.use('/', require('./routes/root'))
 

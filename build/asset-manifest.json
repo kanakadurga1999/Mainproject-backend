@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a8d3b1cc.css",
+    "main.js": "/static/js/main.79feeb1a.js",
+    "static/media/Untitled_Artwork.jpg": "/static/media/Untitled_Artwork.75ee815623edc1686d67.jpg",
+    "static/media/examportal.png": "/static/media/examportal.6d23b6a41653ad312f1c.png",
+    "index.html": "/index.html",
+    "main.a8d3b1cc.css.map": "/static/css/main.a8d3b1cc.css.map",
+    "main.79feeb1a.js.map": "/static/js/main.79feeb1a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8d3b1cc.css",
+    "static/js/main.79feeb1a.js"
+  ]
+}
